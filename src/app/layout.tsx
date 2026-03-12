@@ -1,0 +1,39 @@
+import type { Metadata } from "next";
+import localFont from "next/font/local";
+import { Toaster } from "sonner";
+import "./globals.css";
+
+const geistSans = localFont({
+  src: [
+    { path: "../../public/fonts/Geist-Thin.ttf", weight: "100", style: "normal" },
+    { path: "../../public/fonts/Geist-ExtraLight.ttf", weight: "200", style: "normal" },
+    { path: "../../public/fonts/Geist-Light.ttf", weight: "300", style: "normal" },
+    { path: "../../public/fonts/Geist-Regular.ttf", weight: "400", style: "normal" },
+    { path: "../../public/fonts/Geist-Medium.ttf", weight: "500", style: "normal" },
+    { path: "../../public/fonts/Geist-SemiBold.ttf", weight: "600", style: "normal" },
+    { path: "../../public/fonts/Geist-Bold.ttf", weight: "700", style: "normal" },
+    { path: "../../public/fonts/Geist-ExtraBold.ttf", weight: "800", style: "normal" },
+    { path: "../../public/fonts/Geist-Black.ttf", weight: "900", style: "normal" },
+  ],
+  variable: "--font-geist-sans",
+});
+
+export const metadata: Metadata = {
+  title: "Thamani | Financial Mindfulness for M-PESA",
+  description: "Turn your M-PESA messages into clarity. Thamani helps you understand your money with smart insights, streaks, and complete privacy.",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className={`${geistSans.variable} antialiased`}>
+        {children}
+        <Toaster />
+      </body>
+    </html>
+  );
+}
