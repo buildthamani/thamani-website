@@ -7,8 +7,8 @@ const links = [
     title: "App",
     links: [
       {
-        label: "Get Thamani",
-        href: "https://play.google.com/store",
+        label: "Download Thamani",
+        href: "https://play.google.com/store/apps/details?id=org.bizilabs.app.thamani",
         title: "Download Thamani from the Play Store",
       },
       {

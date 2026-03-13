@@ -1,22 +1,25 @@
-"use client";
+import { HeroSection } from "@/components/sections/hero-section";
+import { ClaritySection } from "@/components/sections/clarity-section";
+import { ValueSection } from "@/components/sections/value-section";
+import { FreedomSection } from "@/components/sections/freedom-section";
+import { NewsletterSection } from "@/components/sections/newsletter-section";
+import { FooterSection } from "@/components/sections/footer-section";
+import { PersistentNav } from "@/components/layout/persistent-nav";
+import { CustomCursor } from "@/components/layout/custom-cursor";
+import { ScrollIndicator } from "@/components/layout/scroll-indicator";
 
-import { FAQs } from "@/components/faqs/faqs";
-import { Features } from "@/components/features/features";
-import { Footer } from "@/components/footer/footer";
-import { Hero } from "@/components/hero/hero";
-import { Quote } from "@/components/quote/quote";
-import { Showcase } from "@/components/showcase/showcase";
-import { Testimonials } from "@/components/testimonials/testimonials";
 export default function Home() {
   return (
-    <>
-      <Hero />
-      <Showcase />
-      <Quote />
-      <Features />
-      <Testimonials />
-      <FAQs />
-      <Footer />
-    </>
+    <main>
+      <PersistentNav />
+      <CustomCursor />
+      <ScrollIndicator />
+      <HeroSection />
+      <ClaritySection />
+      <ValueSection />
+      <FreedomSection />
+      <NewsletterSection />
+      <FooterSection />
+    </main>
   );
 }

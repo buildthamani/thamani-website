@@ -46,7 +46,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --shadow-3xl: var(--shadow-3xl);
-  --animate-word-slide: word-slide 11.5s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  /* Old hero animations removed — ctrl.xyz redesign */
 }
 
 :root {
@@ -153,6 +153,23 @@
   }
 }
 
+/* Custom cursor — hide default on hover-capable devices */
+@media (hover: hover) {
+  .custom-cursor-active,
+  .custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+/* Custom cursor hover pulse */
+@keyframes cursor-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.2); }
+}
+.cursor-dot-hover {
+  animation: cursor-pulse 1.6s ease-in-out infinite;
+}
+
 /* Thamani brand gradient text */
 .gradient-text {
   background: linear-gradient(135deg, #0050FF, #0095FE, #05D3FF);
@@ -166,14 +183,7 @@
   background: linear-gradient(135deg, #0050FF, #0095FE, #05D3FF);
 }
 
-/* Animated hero word cycling — 11.5s total */
-@keyframes word-slide {
-  0%, 13%      { transform: translateY(0%); }       /* Clarity */
-  17.4%, 30.4% { transform: translateY(-20%); }     /* Value */
-  34.8%, 47.8% { transform: translateY(-40%); }     /* Freedom */
-  52.2%, 95.7% { transform: translateY(-60%); }     /* Thamani */
-  100%         { transform: translateY(-80%); }     /* Clarity (loop) */
-}
+/* Old hero keyframes (word-slide, bounce-dot, bounce-arrow) removed — ctrl.xyz redesign */
 
 .marquee-mask {
   mask-image: linear-gradient(
@@ -185,4 +195,80 @@
     rgba(0, 0, 0, 0.2) calc(100% - 12px),
     transparent
   );
+}
+
+/* ───────────────────────────────────────────────
+   ctrl.xyz-inspired Design Tokens
+   ─────────────────────────────────────────────── */
+
+:root {
+  /* Flat palette — ctrl.xyz style */
+  --ctrl-bg: #ffffff;
+  --ctrl-bg-subtle: #f9faf9;
+  --ctrl-bg-muted: #ecefec;
+  --ctrl-fg: #0f0f0f;
+  --ctrl-fg-muted: #727472;
+  --ctrl-fg-subtle: #d1d6d2;
+  --ctrl-accent: #0050FF;
+  --ctrl-border: #ecefec;
+}
+
+/* ───────────────────────────────────────────────
+   Fluid Typography Scale
+   Matches ctrl.xyz's massive display sizing
+   ─────────────────────────────────────────────── */
+
+/* Hero display — 5rem (mobile) → 16rem (desktop) */
+.display-hero {
+  font-size: clamp(4.5rem, 3rem + 8vw, 16rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  font-weight: 900;
+}
+
+/* Section headings — 2.5rem (mobile) → 7rem (desktop) */
+.display-section {
+  font-size: clamp(2.5rem, 1.5rem + 4vw, 7rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  font-weight: 900;
+}
+
+/* Sub-headings — 1.5rem (mobile) → 3rem (desktop) */
+.display-sub {
+  font-size: clamp(1.5rem, 1rem + 1.5vw, 3rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+
+/* Large body text — 1.125rem (mobile) → 1.5rem (desktop) */
+.body-lg {
+  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.5rem);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Medium body text — 1rem (mobile) → 1.25rem (desktop) */
+.body-md {
+  font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Overline labels — ctrl.xyz style uppercase tracking */
+.label-overline {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* Metric numbers — large statistical displays */
+.display-metric {
+  font-size: clamp(3rem, 2rem + 3vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 900;
 }
