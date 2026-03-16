@@ -46,7 +46,6 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --shadow-3xl: var(--shadow-3xl);
-  /* Old hero animations removed — ctrl.xyz redesign */
 }
 
 :root {
@@ -178,55 +177,7 @@ html::-webkit-scrollbar {
   animation: cursor-pulse 1.6s ease-in-out infinite;
 }
 
-/* Thamani brand gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #0050FF, #0095FE, #05D3FF);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Thamani brand gradient background */
-.gradient-brand {
-  background: linear-gradient(135deg, #0050FF, #0095FE, #05D3FF);
-}
-
-/* Old hero keyframes (word-slide, bounce-dot, bounce-arrow) removed — ctrl.xyz redesign */
-
-.marquee-mask {
-  mask-image: linear-gradient(
-    90deg,
-    transparent 0px,
-    rgba(0, 0, 0, 0.2) 12px,
-    rgb(0, 0, 0) 100px,
-    rgb(0, 0, 0) calc(100% - 100px),
-    rgba(0, 0, 0, 0.2) calc(100% - 12px),
-    transparent
-  );
-}
-
-/* ───────────────────────────────────────────────
-   ctrl.xyz-inspired Design Tokens
-   ─────────────────────────────────────────────── */
-
-:root {
-  /* Flat palette — ctrl.xyz style */
-  --ctrl-bg: #ffffff;
-  --ctrl-bg-subtle: #f9faf9;
-  --ctrl-bg-muted: #ecefec;
-  --ctrl-fg: #0f0f0f;
-  --ctrl-fg-muted: #727472;
-  --ctrl-fg-subtle: #d1d6d2;
-  --ctrl-accent: #0050FF;
-  --ctrl-border: #ecefec;
-}
-
-/* ───────────────────────────────────────────────
-   Fluid Typography Scale
-   Matches ctrl.xyz's massive display sizing
-   ─────────────────────────────────────────────── */
-
-/* Hero display — 5rem (mobile) → 16rem (desktop) */
+/* Hero display typography */
 .display-hero {
   font-size: clamp(4.5rem, 3rem + 8vw, 12rem);
   line-height: 0.95;
@@ -234,65 +185,11 @@ html::-webkit-scrollbar {
   font-weight: 900;
 }
 
-/* Section headings — 2.5rem (mobile) → 7rem (desktop) */
-.display-section {
-  font-size: clamp(2.5rem, 1.5rem + 4vw, 7rem);
-  line-height: 1.05;
-  letter-spacing: -0.025em;
-  font-weight: 900;
-}
-
-/* Sub-headings — 1.5rem (mobile) → 3rem (desktop) */
-.display-sub {
-  font-size: clamp(1.5rem, 1rem + 1.5vw, 3rem);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  font-weight: 700;
-}
-
-/* Large body text — 1.125rem (mobile) → 1.5rem (desktop) */
-.body-lg {
-  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.5rem);
-  line-height: 1.6;
-  font-weight: 400;
-}
-
-/* Medium body text — 1rem (mobile) → 1.25rem (desktop) */
-.body-md {
-  font-size: clamp(1rem, 0.9rem + 0.3vw, 1.25rem);
-  line-height: 1.6;
-  font-weight: 400;
-}
-
-/* Overline labels — ctrl.xyz style uppercase tracking */
+/* Overline labels */
 .label-overline {
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 600;
   line-height: 1;
-}
-
-/* Metric numbers — large statistical displays */
-.display-metric {
-  font-size: clamp(3rem, 2rem + 3vw, 5rem);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  font-weight: 900;
-}
-
-/* ── Testimonial marquee animations ── */
-@keyframes marquee-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-@keyframes marquee-scroll-reverse {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
-}
-.animate-marquee {
-  animation: marquee-scroll 35s linear infinite;
-}
-.animate-marquee-reverse {
-  animation: marquee-scroll-reverse 35s linear infinite;
 }

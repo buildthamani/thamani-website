@@ -31,40 +31,6 @@ const faqs = [
   },
 ];
 
-function FaqItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="border-b border-[#e8e8e8]">
-      <button
-        type="button"
-        onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between py-4 text-left"
-      >
-        <span className="text-[0.9rem] font-semibold text-[#0f0f0f] pr-4">{q}</span>
-        <svg
-          className={`h-4 w-4 shrink-0 text-[#727472] transition-transform duration-300 ${open ? "rotate-180" : ""}`}
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={2.5}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <polyline points="6 9 12 15 18 9" />
-        </svg>
-      </button>
-      <div
-        className="grid transition-[grid-template-rows] duration-300"
-        style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
-      >
-        <div className="overflow-hidden">
-          <p className="pb-4 text-[0.82rem] leading-relaxed text-[#727472]">{a}</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export function NewsletterSection() {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -83,17 +49,17 @@ export function NewsletterSection() {
       <div className="relative mx-auto flex max-w-7xl flex-col justify-center px-6 py-24 md:min-h-screen md:py-28">
         <div className="flex flex-col gap-10 md:flex-row md:gap-16 lg:gap-20">
           {/* ── Left: Build Thamani + Description + Subscribe ── */}
-          <motion.div className="shrink-0 md:w-[42%]" style={{ y: leftY, opacity: leftOpacity }}>
+          <motion.div className="shrink-0 md:w-[38%]" style={{ y: leftY, opacity: leftOpacity }}>
             <h5 className="leading-[0.9] font-black tracking-[-0.03em] text-white select-none">
               <span
                 className="block"
-                style={{ fontSize: "clamp(3.5rem, 3rem + 5vw, 8rem)" }}
+                style={{ fontSize: "clamp(3rem, 2.5rem + 4vw, 6.5rem)" }}
               >
                 Build
               </span>
               <span
                 className="block text-[#0050FF]"
-                style={{ fontSize: "clamp(3.5rem, 3rem + 5vw, 8rem)" }}
+                style={{ fontSize: "clamp(3rem, 2.5rem + 4vw, 6.5rem)" }}
               >
                 Thamani.
               </span>

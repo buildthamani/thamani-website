@@ -28,12 +28,12 @@ export function ClaritySection() {
       <div className="relative z-10 mx-auto flex max-w-7xl flex-col justify-center px-6 py-24 md:min-h-screen md:py-28">
         <div className="flex flex-col gap-10 md:flex-row md:gap-16 lg:gap-20">
           {/* ── Left: Big bold "Build Clarity." ── */}
-          <motion.div className="shrink-0 md:w-[42%] md:pt-2" style={{ y: leftY, opacity: leftOpacity }}>
+          <motion.div className="shrink-0 md:w-[38%] md:pt-2" style={{ y: leftY, opacity: leftOpacity }}>
             <h5 className="leading-[0.9] font-black tracking-[-0.03em] text-white select-none">
-              <span className="block" style={{ fontSize: "clamp(3.5rem, 3rem + 5vw, 8rem)" }}>
+              <span className="block" style={{ fontSize: "clamp(3rem, 2.5rem + 4vw, 6.5rem)" }}>
                 Build
               </span>
-              <span className="block text-[#0a1628]" style={{ fontSize: "clamp(3.5rem, 3rem + 5vw, 8rem)" }}>
+              <span className="block text-[#0a1628]" style={{ fontSize: "clamp(3rem, 2.5rem + 4vw, 6.5rem)" }}>
                 Clarity.
               </span>
             </h5>

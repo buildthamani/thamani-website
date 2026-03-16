@@ -15,7 +15,6 @@ const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=org.bizilabs.app.thamani";
 
 export function PersistentNav() {
-  const [showNavCTA, setShowNavCTA] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeLink, setActiveLink] = useState<string | null>(null);
 
@@ -40,38 +39,6 @@ export function PersistentNav() {
     return () => observers.forEach((io) => io.disconnect());
   }, []);
 
-  // Observe the hero CTA button — when it leaves the viewport, show nav CTA
-  useEffect(() => {
-    let io: IntersectionObserver | null = null;
-
-    const setup = () => {
-      const heroCTA = document.getElementById("hero-cta");
-      if (!heroCTA) return;
-
-      io = new IntersectionObserver(
-        ([entry]) => setShowNavCTA(!entry.isIntersecting),
-        { threshold: 0 }
-      );
-      io.observe(heroCTA);
-    };
-
-    setup();
-
-    if (!io) {
-      const interval = setInterval(() => {
-        setup();
-        if (io) clearInterval(interval);
-      }, 200);
-      const timeout = setTimeout(() => clearInterval(interval), 3000);
-      return () => {
-        clearInterval(interval);
-        clearTimeout(timeout);
-        io?.disconnect();
-      };
-    }
-
-    return () => io?.disconnect();
-  }, []);
 
   const handleNavClick = useCallback((href: string) => {
     setActiveLink(href);

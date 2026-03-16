@@ -83,8 +83,6 @@ export function FreedomSection() {
 
   return (
     <section ref={sectionRef} id="freedom" data-nav-theme="dark" className="relative md:sticky top-0 z-[4] bg-[#B081EE]">
-      {/* Inline keyframes — Tailwind v4 strips them from globals.css */}
-      {/* eslint-disable-next-line react/no-danger */}
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes marquee-scroll {
           0% { transform: translateX(0); }
