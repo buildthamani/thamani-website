@@ -95,8 +95,8 @@ export function ValueSection() {
   const cardsOpacity = useTransform(scrollYProgress, [0.4, 0.65], [0, 1]);
 
   return (
-    <section ref={sectionRef} id="value" data-nav-theme="light" className="sticky top-0 z-[3] bg-white">
-      <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 py-20 md:py-28">
+    <section ref={sectionRef} id="value" data-nav-theme="light" className="relative md:sticky top-0 z-[3] bg-white">
+      <div className="relative mx-auto flex max-w-7xl flex-col justify-center px-6 py-24 md:min-h-screen md:py-28">
         <div className="flex flex-col gap-10 md:flex-row md:gap-16 lg:gap-20">
           {/* ── Left: Big bold "Build Value." ── */}
           <motion.div className="shrink-0 md:w-[42%] md:pt-2" style={{ y: leftY, opacity: leftOpacity }}>

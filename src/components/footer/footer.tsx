@@ -7,13 +7,13 @@ const links = [
     title: "App",
     links: [
       {
-        label: "Download Thamani",
+        label: "Experience Thamani",
         href: "https://play.google.com/store/apps/details?id=org.bizilabs.app.thamani",
         title: "Download Thamani from the Play Store",
       },
       {
         label: "Features",
-        href: "/#features",
+        href: "/#value",
         title: "See our features",
       },
     ],

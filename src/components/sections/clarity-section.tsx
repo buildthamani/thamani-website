@@ -19,8 +19,13 @@ export function ClaritySection() {
   const cardsOpacity = useTransform(scrollYProgress, [0.4, 0.65], [0, 1]);
 
   return (
-    <section ref={sectionRef} id="clarity" data-nav-theme="dark" className="sticky top-0 z-[2] bg-[#0050FF]">
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 py-20 md:py-28">
+    <section
+      ref={sectionRef}
+      id="clarity"
+      data-nav-theme="dark"
+      className="relative top-0 z-[2] bg-[#0050FF] md:sticky"
+    >
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col justify-center px-6 py-24 md:min-h-screen md:py-28">
         <div className="flex flex-col gap-10 md:flex-row md:gap-16 lg:gap-20">
           {/* ── Left: Big bold "Build Clarity." ── */}
           <motion.div className="shrink-0 md:w-[42%] md:pt-2" style={{ y: leftY, opacity: leftOpacity }}>
@@ -70,7 +75,7 @@ export function ClaritySection() {
               <div className="relative overflow-hidden rounded-[20px] bg-[#EFAA43] px-6 pt-5 pb-6">
                 {/* Large background icon — cloud with slash (offline) */}
                 <svg
-                  className="absolute -top-2 -right-4 text-white/[0.12]"
+                  className="absolute -top-2 -right-4 text-[#BC7710]/[0.25]"
                   width="140"
                   height="140"
                   viewBox="0 0 24 24"
@@ -85,9 +90,9 @@ export function ClaritySection() {
                 {/* Spacer to push content below the bg icon */}
                 <div className="h-20 md:h-24" />
 
-                <h6 className="relative z-10 text-base font-semibold text-white md:text-lg">Fully Offline</h6>
+                <h6 className="relative z-10 text-base font-semibold text-[#BC7710] md:text-lg">Fully Offline</h6>
 
-                <p className="relative z-10 mt-1.5 text-sm leading-relaxed font-semibold text-white/55">
+                <p className="relative z-10 mt-1.5 text-sm leading-relaxed font-semibold text-[#BC7710]">
                   Everything runs on your device.
                 </p>
               </div>
@@ -96,7 +101,7 @@ export function ClaritySection() {
               <div className="relative overflow-hidden rounded-[20px] bg-[#18C994] px-6 pt-5 pb-6">
                 {/* Large background icon — shield with lock */}
                 <svg
-                  className="absolute -top-1 -right-3 text-white/[0.12]"
+                  className="absolute -top-1 -right-3 text-[#0D6E51]/[0.25]"
                   width="130"
                   height="130"
                   viewBox="0 0 24 24"
@@ -112,9 +117,9 @@ export function ClaritySection() {
                 {/* Spacer to push content below the bg icon */}
                 <div className="h-20 md:h-24" />
 
-                <h6 className="relative z-10 text-base font-semibold text-white md:text-lg">100% Private</h6>
+                <h6 className="relative z-10 text-base font-semibold text-[#0D6E51] md:text-lg">100% Private</h6>
 
-                <p className="relative z-10 mt-1.5 text-sm leading-relaxed text-white/55">
+                <p className="relative z-10 mt-1.5 text-sm leading-relaxed text-[#0D6E51]">
                   No cloud syncing or uploads
                 </p>
               </div>

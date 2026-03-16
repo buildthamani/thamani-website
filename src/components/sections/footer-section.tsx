@@ -12,28 +12,32 @@ const footerLinks = {
     { label: "Features", href: "#clarity" },
   ],
   Company: [
-    { label: "Product", href: "#contact" },
-    { label: "Engineering", href: "#" },
+    { label: "Product", href: "https://build.thamani.app/articles/product/introduction" },
+    { label: "Engineering", href: "https://build.thamani.app/articles/engineering/init" },
   ],
   Legal: [
-    { label: "Privacy Policy", href: "/privacy-policy" },
-    { label: "Terms & Conditions", href: "/terms-and-conditions" },
+    { label: "Privacy Policy", href: "https://build.thamani.app/legal/privacy" },
+    { label: "Terms & Conditions", href: "https://build.thamani.app/legal/termsofservice" },
   ],
 };
 
 export function FooterSection() {
   return (
-    <footer id="contact" data-nav-theme="light" className="sticky top-0 z-[6] border-t border-[#ecefec] bg-white">
+    <footer
+      id="contact"
+      data-nav-theme="light"
+      className="relative top-0 z-[6] border-t border-[#ecefec] bg-white md:sticky"
+    >
       <div className="mx-auto max-w-7xl px-6 py-16 md:py-20">
         {/* Top row */}
         <div className="grid grid-cols-2 gap-12 md:grid-cols-5 md:gap-8">
           {/* Brand */}
           <div className="col-span-2 flex flex-col gap-4 md:col-span-1">
             <div className="flex items-center gap-2.5">
-              <Image src="/logo.svg" alt="Thamani" width={28} height={28} />
+              <Image src="/thamani-black.svg" alt="Thamani" width={32} height={32} />
               <span className="text-lg font-bold tracking-tight text-[#0f0f0f]">Thamani</span>
             </div>
-            <p className="max-w-xs text-sm leading-relaxed text-[#727472]">Financial mindfulness for M-PESA users.</p>
+            <p className="max-w-xs text-sm leading-relaxed text-[#727472]">Financial mindfulness .</p>
           </div>
 
           {/* Link columns */}
@@ -65,7 +69,7 @@ export function FooterSection() {
         {/* Bottom row */}
         <div className="flex flex-col items-center justify-between gap-4 border-t border-[#ecefec] pt-6 sm:flex-row">
           <p className="text-xs text-[#727472]">&copy; {new Date().getFullYear()} Thamani. All rights reserved.</p>
-          <p className="text-xs text-[#727472]">Made with intention in Nairobi</p>
+          <p className="text-xs text-[#727472]">Made with intention</p>
         </div>
       </div>
     </footer>

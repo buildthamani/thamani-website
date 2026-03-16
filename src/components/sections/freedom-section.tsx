@@ -82,7 +82,7 @@ export function FreedomSection() {
   const marqueeOpacity = useTransform(scrollYProgress, [0.4, 0.65], [0, 1]);
 
   return (
-    <section ref={sectionRef} id="freedom" data-nav-theme="dark" className="sticky top-0 z-[4] bg-[#B081EE]">
+    <section ref={sectionRef} id="freedom" data-nav-theme="dark" className="relative md:sticky top-0 z-[4] bg-[#B081EE]">
       {/* Inline keyframes — Tailwind v4 strips them from globals.css */}
       {/* eslint-disable-next-line react/no-danger */}
       <style dangerouslySetInnerHTML={{ __html: `
@@ -95,7 +95,7 @@ export function FreedomSection() {
           100% { transform: translateX(0); }
         }
       ` }} />
-      <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 py-20 md:py-28">
+      <div className="relative mx-auto flex max-w-7xl flex-col justify-center px-6 py-24 md:min-h-screen md:py-28">
         <div className="flex flex-col gap-8 md:flex-row md:gap-16 lg:gap-20">
           {/* ── Left: Big bold "Build Freedom." ── */}
           <motion.div className="shrink-0 md:w-[38%] md:pt-2" style={{ y: leftY, opacity: leftOpacity }}>

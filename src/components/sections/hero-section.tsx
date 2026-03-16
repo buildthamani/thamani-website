@@ -10,7 +10,7 @@ export function HeroSection() {
   return (
     <section
       data-nav-theme="light"
-      className="sticky top-0 z-[1] flex h-screen flex-col bg-white"
+      className="relative md:sticky top-0 z-[1] flex h-screen flex-col bg-white"
     >
       {/* Centered hero content */}
       <div className="flex flex-1 flex-col items-center justify-center px-6">
