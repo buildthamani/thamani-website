@@ -153,6 +153,14 @@
   }
 }
 
+/* Hide native scrollbar — custom scroll indicator replaces it */
+html {
+  scrollbar-width: none; /* Firefox */
+}
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
 /* Custom cursor — hide default on hover-capable devices */
 @media (hover: hover) {
   .custom-cursor-active,
@@ -220,7 +228,7 @@
 
 /* Hero display — 5rem (mobile) → 16rem (desktop) */
 .display-hero {
-  font-size: clamp(4.5rem, 3rem + 8vw, 16rem);
+  font-size: clamp(4.5rem, 3rem + 8vw, 12rem);
   line-height: 0.95;
   letter-spacing: -0.03em;
   font-weight: 900;

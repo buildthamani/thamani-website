@@ -25,7 +25,7 @@ export function ValueSection() {
     <section
       id="value"
       data-nav-theme="light"
-      className="relative bg-white py-32 md:py-40"
+      className="sticky top-0 z-[3] bg-white py-32 md:py-40"
     >
       <div className="max-w-7xl mx-auto px-6">
         {/* Overline */}

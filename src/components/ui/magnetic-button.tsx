@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  useRef,
-  useState,
-  type ReactNode,
-  type MouseEvent as ReactMouseEvent,
-} from "react";
+import { useRef, useState, type ReactNode, type MouseEvent as ReactMouseEvent } from "react";
 import { motion, useSpring, useTransform } from "motion/react";
 
 interface MagneticButtonProps {
@@ -78,7 +73,7 @@ export function MagneticButton({
     >
       {/* Background fill — scales from center on hover */}
       <motion.span
-        className="absolute inset-0 rounded-[inherit] bg-[#0040CC] pointer-events-none"
+        className="pointer-events-none absolute inset-0 rounded-[inherit] bg-[#E18F14]"
         style={{
           scale: bgScale,
           opacity: hovered ? 1 : 0,

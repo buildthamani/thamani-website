@@ -7,6 +7,7 @@ import { FooterSection } from "@/components/sections/footer-section";
 import { PersistentNav } from "@/components/layout/persistent-nav";
 import { CustomCursor } from "@/components/layout/custom-cursor";
 import { ScrollIndicator } from "@/components/layout/scroll-indicator";
+import { FloatingCTA } from "@/components/ui/floating-cta";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <PersistentNav />
       <CustomCursor />
       <ScrollIndicator />
+      <FloatingCTA />
       <HeroSection />
       <ClaritySection />
       <ValueSection />

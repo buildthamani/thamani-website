@@ -13,7 +13,7 @@ export function FreedomSection() {
     <section
       id="freedom"
       data-nav-theme="light"
-      className="relative bg-[#ecefec] py-32 md:py-40"
+      className="sticky top-0 z-[4] bg-[#ecefec] py-32 md:py-40"
     >
       <div className="max-w-7xl mx-auto px-6">
         {/* Overline */}

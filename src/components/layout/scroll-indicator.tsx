@@ -12,7 +12,7 @@ export function ScrollIndicator() {
   return (
     <div className="fixed top-0 right-0 z-[100] w-[3px] h-screen pointer-events-none">
       <motion.div
-        className="w-full h-full bg-[#0050FF] origin-top"
+        className="w-full h-full bg-blue-600 origin-top"
         style={{ scaleY: scrollYProgress }}
       />
     </div>

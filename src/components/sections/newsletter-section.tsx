@@ -5,7 +5,7 @@ import { MagneticButton } from "@/components/ui/magnetic-button";
 
 export function NewsletterSection() {
   return (
-    <section className="relative bg-white py-32 md:py-40">
+    <section className="sticky top-0 z-[5] bg-white py-32 md:py-40">
       <div className="max-w-7xl mx-auto px-6">
         {/* Overline */}
         <SectionReveal>

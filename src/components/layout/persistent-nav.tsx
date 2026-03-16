@@ -129,7 +129,7 @@ export function PersistentNav() {
                   href={PLAY_STORE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#0f0f0f] px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-600 hover:border-solid hover:border-2 hover:border-black"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#0f0f0f] px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-600 hover:border-2 hover:border-solid hover:border-black"
                   initial={{ opacity: 0, scale: 0.9, x: 10 }}
                   animate={{ opacity: 1, scale: 1, x: 0 }}
                   exit={{ opacity: 0, scale: 0.9, x: 10 }}
@@ -236,7 +236,7 @@ export function PersistentNav() {
                         rel="noopener noreferrer"
                         className="mt-auto inline-flex items-center justify-center gap-2.5 rounded-full bg-[#0f0f0f] px-6 py-3.5 text-sm font-semibold text-white"
                       >
-                        Download Thamani
+                        Experience Thamani
                       </a>
                     </motion.div>
                   </Dialog.Content>

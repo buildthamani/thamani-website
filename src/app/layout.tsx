@@ -20,8 +20,8 @@ const geistSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Thamani | Financial Mindfulness for M-PESA",
-  description: "Turn your M-PESA messages into clarity. Thamani helps you understand your money with smart insights, streaks, and complete privacy.",
+  title: "Thamani",
+  description: "Discover the hidden patterns in your daily spending.",
 };
 
 export default function RootLayout({
@@ -32,9 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} antialiased`}>
-        <SmoothScrollProvider>
-          {children}
-        </SmoothScrollProvider>
+        <SmoothScrollProvider>{children}</SmoothScrollProvider>
         <Toaster />
       </body>
     </html>
