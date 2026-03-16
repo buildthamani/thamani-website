@@ -67,67 +67,55 @@ export function ClaritySection() {
               style={{ y: cardsY, opacity: cardsOpacity }}
             >
               {/* Card 1: Fully Offline */}
-              <div className="relative overflow-hidden rounded-[20px] bg-[#22C55E] px-6 pt-5 pb-6">
-                {/* Icon circle */}
-                <div className="absolute top-4 right-4 flex h-9 w-9 items-center justify-center rounded-full bg-[#0f0f0f]/15">
-                  <svg
-                    className="h-4 w-4 text-white"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2.5}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  </svg>
-                </div>
-
-                {/* Large ghost number */}
-                <span
-                  className="block leading-none font-bold tracking-[-0.04em] text-white/20"
-                  style={{ fontSize: "clamp(3rem, 2.5rem + 3.5vw, 6rem)" }}
+              <div className="relative overflow-hidden rounded-[20px] bg-[#EFAA43] px-6 pt-5 pb-6">
+                {/* Large background icon — cloud with slash (offline) */}
+                <svg
+                  className="absolute -top-2 -right-4 text-white/[0.12]"
+                  width="140"
+                  height="140"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  stroke="none"
                 >
-                  50k+
-                </span>
+                  <path d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" />
+                  {/* Slash line to indicate "offline" */}
+                  <line x1="2" y1="2" x2="22" y2="22" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+                </svg>
 
-                <h6 className="mt-2 text-base font-semibold text-white md:text-lg">Fully offline</h6>
+                {/* Spacer to push content below the bg icon */}
+                <div className="h-20 md:h-24" />
 
-                <p className="mt-1.5 text-sm leading-relaxed text-white/55">
-                  Everything runs on your device. No servers, no internet needed — your data never leaves your phone.
+                <h6 className="relative z-10 text-base font-semibold text-white md:text-lg">Fully Offline</h6>
+
+                <p className="relative z-10 mt-1.5 text-sm leading-relaxed font-semibold text-white/55">
+                  Everything runs on your device.
                 </p>
               </div>
 
-              {/* Card 2: Data shared */}
-              <div className="relative overflow-hidden rounded-[20px] bg-[#F87171] px-6 pt-5 pb-6">
-                {/* Icon circle */}
-                <div className="absolute top-4 right-4 flex h-9 w-9 items-center justify-center rounded-full bg-[#0f0f0f]/15">
-                  <svg
-                    className="h-4 w-4 text-white"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2.5}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                  </svg>
-                </div>
-
-                {/* Large ghost number */}
-                <span
-                  className="block leading-none font-bold tracking-[-0.04em] text-white/20"
-                  style={{ fontSize: "clamp(3rem, 2.5rem + 3.5vw, 6rem)" }}
+              {/* Card 2: 100% Private */}
+              <div className="relative overflow-hidden rounded-[20px] bg-[#18C994] px-6 pt-5 pb-6">
+                {/* Large background icon — shield with lock */}
+                <svg
+                  className="absolute -top-1 -right-3 text-white/[0.12]"
+                  width="130"
+                  height="130"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  stroke="none"
                 >
-                  100%
-                </span>
+                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" />
+                  {/* Lock keyhole */}
+                  <circle cx="12" cy="12" r="2" fill="currentColor" opacity="0.5" />
+                  <rect x="11" y="12" width="2" height="3" rx="0.5" fill="currentColor" opacity="0.5" />
+                </svg>
 
-                <h6 className="mt-2 text-base font-semibold text-white md:text-lg">Data shared</h6>
+                {/* Spacer to push content below the bg icon */}
+                <div className="h-20 md:h-24" />
 
-                <p className="mt-1.5 text-sm leading-relaxed text-white/55">
-                  No account required. No cloud uploads. Your financial story belongs to you and you alone.
+                <h6 className="relative z-10 text-base font-semibold text-white md:text-lg">100% Private</h6>
+
+                <p className="relative z-10 mt-1.5 text-sm leading-relaxed text-white/55">
+                  No cloud syncing or uploads
                 </p>
               </div>
             </motion.div>
