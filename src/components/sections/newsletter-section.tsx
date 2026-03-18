@@ -4,18 +4,17 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useRef, useState } from "react";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 
+const PLAY_STORE_URL =
+  "https://play.google.com/store/apps/details?id=org.bizilabs.app.thamani";
+
 const faqs = [
   {
-    q: "Is my data safe?",
+    q: "Is my data safe and private?",
     a: "Absolutely. Thamani processes everything on your device. Your financial data is never uploaded, stored on servers, or shared with anyone — it stays entirely on your phone.",
   },
   {
-    q: "Is the app private?",
-    a: "Yes, 100%. No account is required, no cloud syncing, and no third-party tracking. We can't see your data even if we wanted to.",
-  },
-  {
     q: "Can the app work offline?",
-    a: "Thamani is built offline-first. Every feature works without an internet connection — your transactions, categories, insights, and budgets are always available.",
+    a: "Thamani is built to be offline-first. Some features works without an internet connection — your transactions, categories, insights, and budgets are always available.",
   },
   {
     q: "Is there a free trial?",
@@ -69,28 +68,39 @@ export function NewsletterSection() {
               className="mt-6 max-w-sm leading-relaxed font-normal text-white/50"
               style={{ fontSize: "clamp(0.95rem, 0.85rem + 0.35vw, 1.125rem)" }}
             >
-              Stay in the loop — get updates on new features, tips for better
-              financial habits, and early access to what we&apos;re building next.
+              Thamani (swahili for "value") is built to 
+              make your finances easy, private, and extremely enjoyable.
             </p>
 
-            {/* Subscribe form */}
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="mt-8 flex max-w-sm flex-col gap-3 sm:flex-row"
-            >
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="flex-1 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-white placeholder:text-white/30 outline-none transition-colors focus:border-[#0050FF] focus:bg-white/8"
-              />
-              <MagneticButton
-                as="button"
-                type="submit"
-                className="shrink-0 rounded-full bg-[#0050FF] px-6 py-3 text-sm font-semibold text-white"
-              >
-                Subscribe
-              </MagneticButton>
-            </form>
+            {/* CTA — hero primary. Nav CTA observes this element. */}
+                    <motion.div
+                      id="hero-cta"
+                      className="mt-4 md:mt-6"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{
+                        duration: 0.8,
+                        delay: 0.3,
+                        ease: [0.22, 1, 0.36, 1],
+                      }}
+                    >
+                      <MagneticButton
+                        as="a"
+                        href={PLAY_STORE_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex animate-bounce items-center justify-center gap-2.5 rounded-full border-2 border-solid border-black bg-[#EFAA43] px-8 py-4 text-base font-semibold text-black"
+                      >
+                        <svg
+                          className="inline-flex h-5 w-5"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.302zM5.864 2.658L16.8 9.99l-2.302 2.302L5.864 3.658z" />
+                        </svg>
+                        <span className="ml-2">Experience Thamani</span>
+                      </MagneticButton>
+                    </motion.div>
           </motion.div>
 
           {/* ── Right: FAQ ── */}

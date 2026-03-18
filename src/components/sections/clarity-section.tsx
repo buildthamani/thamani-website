@@ -43,7 +43,7 @@ export function ClaritySection() {
           <div className="flex flex-1 flex-col">
             {/* Title */}
             <motion.h6
-              className="leading-[1.1] font-medium tracking-[-0.02em] text-white"
+              className="leading-[1.1] font-semibold tracking-[-0.02em] text-white"
               style={{
                 y: rightY,
                 opacity: rightOpacity,
