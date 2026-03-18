@@ -109,7 +109,7 @@ export function PersistentNav() {
                     className={`mx-2 relative px-4 py-2 rounded-full text-xs font-medium tracking-[0.08em] uppercase transition-all duration-300 ${
                       isActive
                         ? "bg-black text-white"
-                        : "text-black hover:bg-blue-200 hover:text-[#0f0f0f]"
+                        : "text-black hover:bg-[#E0E0E0] hover:text-[#0f0f0f]"
                     }`}
                   >
                     {link.label}
