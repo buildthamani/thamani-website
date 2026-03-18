@@ -63,7 +63,7 @@ export function ClaritySection() {
               }}
             >
               Scrolling through your inbox trying to remember where your cash went? Thamani takes that chaos and
-              converts it into clear transactions — giving you the structure to make choices with total confidence.
+              converts it into clear transactions 󠁯- giving you the structure to make choices with total confidence.
             </motion.p>
 
             {/* Cards */}
@@ -75,7 +75,7 @@ export function ClaritySection() {
               <div className="relative overflow-hidden rounded-[20px] bg-[#EFAA43] px-6 pt-5 pb-6">
                 {/* Large background icon — cloud with slash (offline) */}
                 <svg
-                  className="absolute -top-2 -right-4 text-[#BC7710]/[0.25]"
+                  className="absolute -top-2 -right-4 text-[#83530B]/[0.25]"
                   width="140"
                   height="140"
                   viewBox="0 0 24 24"
@@ -90,10 +90,10 @@ export function ClaritySection() {
                 {/* Spacer to push content below the bg icon */}
                 <div className="h-20 md:h-24" />
 
-                <h6 className="relative z-10 text-base font-semibold text-[#BC7710] md:text-lg">Fully Offline</h6>
+                <h6 className="relative z-10 text-base font-semibold text-[#83530B] md:text-lg">Fully Offline</h6>
 
-                <p className="relative z-10 mt-1.5 text-sm leading-relaxed font-semibold text-[#BC7710]">
-                  Everything runs on your device.
+                <p className="relative z-10 mt-1.5 text-sm leading-relaxed  text-[#83530B] ">
+                  No cloud syncing or uploads
                 </p>
               </div>
 
@@ -119,8 +119,10 @@ export function ClaritySection() {
 
                 <h6 className="relative z-10 text-base font-semibold text-[#0D6E51] md:text-lg">100% Private</h6>
 
-                <p className="relative z-10 mt-1.5 text-sm leading-relaxed text-[#0D6E51]">
-                  No cloud syncing or uploads
+                
+
+                <p className="relative z-10 mt-1.5 text-sm leading-relaxed font-normal text-[#0D6E51]">
+                  Everything runs on your device.
                 </p>
               </div>
             </motion.div>
