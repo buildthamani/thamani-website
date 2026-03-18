@@ -3,13 +3,20 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
+const cardColors = [
+  { bg: "#DDC9F8", text: "#190D30", iconBg: "#B280EF", iconHoverBg: "rgba(25, 13, 48, 0.18)" },
+  { bg: "#F9C8CA", text: "#4A080B", iconBg: "#F4989C", iconHoverBg: "rgba(74, 8, 11, 0.18)" },
+  { bg: "#7FF0CE", text: "#063728", iconBg: "#1ADBA1", iconHoverBg: "rgba(13, 110, 81, 0.18)" },
+  { bg: "#F8CDB4", text: "#712F09", iconBg: "#F3A87C", iconHoverBg: "rgba(113, 47, 9, 0.18)" },
+];
+
 const features = [
   {
     title: "Seamless tracking",
     description: "Your finances organized effortlessly — no manual entry, no extra steps.",
     icon: (
       <svg
-        className="h-5 w-5"
+        className="h-5 w-5 text-white"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -27,7 +34,7 @@ const features = [
     description: "Every shilling finds its place — so you always know where your money went.",
     icon: (
       <svg
-        className="h-5 w-5"
+        className="h-5 w-5 text-white"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -45,7 +52,7 @@ const features = [
     description: "See exactly how your money moves — patterns, peaks, and where it all adds up.",
     icon: (
       <svg
-        className="h-5 w-5"
+        className="h-5 w-5 text-white"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -65,7 +72,7 @@ const features = [
     description: "Budgeting, Statements and so much more — all working together so you stay mindful.",
     icon: (
       <svg
-        className="h-5 w-5"
+        className="h-5 w-5 text-white"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -114,7 +121,7 @@ export function ValueSection() {
           <div className="flex flex-1 flex-col">
             {/* Title */}
             <motion.h6
-              className="leading-[1.1] font-medium tracking-[-0.02em] text-[#0f0f0f]"
+              className="leading-[1.1] font-semibold tracking-[-0.02em] text-[#0f0f0f]"
               style={{
                 y: rightY,
                 opacity: rightOpacity,
@@ -141,21 +148,38 @@ export function ValueSection() {
               className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:mt-10"
               style={{ y: cardsY, opacity: cardsOpacity }}
             >
-              {features.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="group rounded-[16px] border border-[#e8e8e8] bg-[#fafafa] px-5 py-5 transition-colors duration-300 hover:border-[#0050FF]/30 hover:bg-[#0050FF]/[0.03]"
-                >
-                  {/* Icon */}
-                  <div className="flex h-9 w-9 items-center justify-center rounded-[10px] bg-[#0050FF]/10 text-[#0050FF] transition-colors duration-300 group-hover:bg-[#0050FF]/15">
-                    {feature.icon}
+              {features.map((feature, i) => {
+                const colors = cardColors[i];
+                return (
+                  <div
+                    key={feature.title}
+                    className="group rounded-[16px] px-6 py-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+                    style={{ backgroundColor: colors.bg }}
+                  >
+                    {/* Icon */}
+                    <div
+                      className="flex h-9 w-9 items-center justify-center rounded-[10px] transition-colors duration-300"
+                      style={{ backgroundColor: colors.iconBg, color: colors.text }}
+                    >
+                      {feature.icon}
+                    </div>
+
+                    <h6
+                      className="mt-5 text-[0.95rem] leading-tight font-semibold"
+                      style={{ color: colors.text }}
+                    >
+                      {feature.title}
+                    </h6>
+
+                    <p
+                      className="mt-1.5 text-[0.8rem] leading-relaxed opacity-75"
+                      style={{ color: colors.text }}
+                    >
+                      {feature.description}
+                    </p>
                   </div>
-
-                  <h6 className="mt-3.5 text-[0.95rem] leading-tight font-semibold text-[#0f0f0f]">{feature.title}</h6>
-
-                  <p className="mt-1.5 text-[0.8rem] leading-relaxed text-[#727472]">{feature.description}</p>
-                </div>
-              ))}
+                );
+              })}
             </motion.div>
           </div>
         </div>
