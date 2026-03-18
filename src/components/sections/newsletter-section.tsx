@@ -68,7 +68,7 @@ export function NewsletterSection() {
               className="mt-6 max-w-sm leading-relaxed font-normal text-white/50"
               style={{ fontSize: "clamp(0.95rem, 0.85rem + 0.35vw, 1.125rem)" }}
             >
-              Thamani (swahili for "value") is built to 
+              Thamani (swahili for &ldquo;value&rdquo;) is built to 
               make your finances easy, private, and extremely enjoyable.
             </p>
 
