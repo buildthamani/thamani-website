@@ -46,7 +46,6 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --shadow-3xl: var(--shadow-3xl);
-  --animate-word-slide: word-slide 11.5s cubic-bezier(0.22, 1, 0.36, 1) infinite;
 }
 
 :root {
@@ -153,36 +152,44 @@
   }
 }
 
-/* Thamani brand gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #0050FF, #0095FE, #05D3FF);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Hide native scrollbar — custom scroll indicator replaces it */
+html {
+  scrollbar-width: none; /* Firefox */
+}
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
 }
 
-/* Thamani brand gradient background */
-.gradient-brand {
-  background: linear-gradient(135deg, #0050FF, #0095FE, #05D3FF);
+/* Custom cursor — hide default on hover-capable devices */
+@media (hover: hover) {
+  .custom-cursor-active,
+  .custom-cursor-active * {
+    cursor: none !important;
+  }
 }
 
-/* Animated hero word cycling — 11.5s total */
-@keyframes word-slide {
-  0%, 13%      { transform: translateY(0%); }       /* Clarity */
-  17.4%, 30.4% { transform: translateY(-20%); }     /* Value */
-  34.8%, 47.8% { transform: translateY(-40%); }     /* Freedom */
-  52.2%, 95.7% { transform: translateY(-60%); }     /* Thamani */
-  100%         { transform: translateY(-80%); }     /* Clarity (loop) */
+/* Custom cursor hover pulse */
+@keyframes cursor-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.2); }
+}
+.cursor-dot-hover {
+  animation: cursor-pulse 1.6s ease-in-out infinite;
 }
 
-.marquee-mask {
-  mask-image: linear-gradient(
-    90deg,
-    transparent 0px,
-    rgba(0, 0, 0, 0.2) 12px,
-    rgb(0, 0, 0) 100px,
-    rgb(0, 0, 0) calc(100% - 100px),
-    rgba(0, 0, 0, 0.2) calc(100% - 12px),
-    transparent
-  );
+/* Hero display typography */
+.display-hero {
+  font-size: clamp(4.5rem, 3rem + 8vw, 12rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  font-weight: 900;
+}
+
+/* Overline labels */
+.label-overline {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1;
 }
