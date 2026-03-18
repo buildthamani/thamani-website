@@ -8,7 +8,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 const navLinks = [
   { label: "Clarity", href: "#clarity" },
   { label: "Value", href: "#value" },
-  { label: "Freedom", href: "#contact" },
+  { label: "Freedom", href: "#freedom" },
 ];
 
 const PLAY_STORE_URL =
@@ -18,25 +18,55 @@ export function PersistentNav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeLink, setActiveLink] = useState<string | null>(null);
 
-  // Track which section is in view for active nav state
+  // Track which sticky section is visually on top via scroll position.
+  // All sticky sections share the same offsetTop and IntersectionObserver
+  // reports them all as fully visible, so we compute scroll ranges from
+  // DOM order instead — each section "owns" one viewport-height of scroll.
   useEffect(() => {
-    const sectionIds = navLinks.map((l) => l.href.replace("#", ""));
-    const observers: IntersectionObserver[] = [];
+    const navIds = new Set(navLinks.map((l) => l.href.replace("#", "")));
 
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const io = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) setActiveLink(`#${id}`);
-        },
-        { threshold: 0.3 }
-      );
-      io.observe(el);
-      observers.push(io);
-    });
+    const buildRanges = () => {
+      const main = document.querySelector("main");
+      if (!main) return [];
 
-    return () => observers.forEach((io) => io.disconnect());
+      const stickySections = Array.from(main.children).filter((el) => {
+        const s = window.getComputedStyle(el);
+        return s.position === "sticky" && navIds.has(el.id);
+      }) as HTMLElement[];
+
+      if (stickySections.length === 0) return [];
+
+      return stickySections.map((el, i) => ({
+        id: el.id,
+        start: el.offsetTop,
+        end: i < stickySections.length - 1
+          ? stickySections[i + 1].offsetTop
+          : el.offsetTop + window.innerHeight,
+      }));
+    };
+
+    let ranges = buildRanges();
+
+    const update = () => {
+      if (ranges.length === 0) ranges = buildRanges();
+
+      const scrollY = window.scrollY;
+      let active: string | null = null;
+
+      for (const r of ranges) {
+        if (scrollY >= r.start && scrollY < r.end) active = `#${r.id}`;
+      }
+
+      setActiveLink(active);
+    };
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", () => { ranges = buildRanges(); update(); });
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", () => { ranges = buildRanges(); update(); });
+    };
   }, []);
 
 
@@ -62,7 +92,7 @@ export function PersistentNav() {
           </a>
 
           {/* Desktop nav pill — CENTER */}
-          <div className="hidden md:flex items-center rounded-md bg-blue-100 p-3 border-2 border-solid border-blue-200">
+          <div className="hidden md:flex items-center rounded-full bg-[#F5F5F5] p-2 border-2 border-solid border-[#F0F0F0]">
             {navLinks.map((link, i) => {
               const isActive = activeLink === link.href;
               return (
@@ -76,7 +106,7 @@ export function PersistentNav() {
                   <a
                     href={link.href}
                     onClick={() => handleNavClick(link.href)}
-                    className={`mx-4 relative px-6 py-2 rounded-full text-xs font-medium tracking-[0.08em] uppercase transition-all duration-300 ${
+                    className={`mx-2 relative px-4 py-2 rounded-full text-xs font-medium tracking-[0.08em] uppercase transition-all duration-300 ${
                       isActive
                         ? "bg-black text-white"
                         : "text-black hover:bg-blue-200 hover:text-[#0f0f0f]"
@@ -96,7 +126,7 @@ export function PersistentNav() {
                   href={PLAY_STORE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#0f0f0f] px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-600 hover:border-2 hover:border-solid hover:border-black"
+                  className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#EFAA43] hover:text-black"
                   initial={{ opacity: 0, scale: 0.9, x: 10 }}
                   animate={{ opacity: 1, scale: 1, x: 0 }}
                   exit={{ opacity: 0, scale: 0.9, x: 10 }}
