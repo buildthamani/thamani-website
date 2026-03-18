@@ -5,8 +5,8 @@ import { useRef } from "react";
 
 const testimonialsRow1 = [
   { name: "Amina K.", role: "Student", quote: "I finally know where my money goes every month. No more guessing." },
-  { name: "Brian O.", role: "Freelancer", quote: "Thamani made budgeting feel natural instead of like a chore." },
-  { name: "Faith W.", role: "Small business owner", quote: "The categorization is spot on — I barely touch anything." },
+  { name: "Mariah O.", role: "Freelancer", quote: "Thamani made budgeting feel natural instead of like a chore." },
+  { name: "Faith W.", role: "Small business owner", quote: "The auto categorization is spot on — I barely touch anything." },
   { name: "Kevin M.", role: "Developer", quote: "Love that nothing leaves my phone. Privacy done right." },
   { name: "Grace N.", role: "Teacher", quote: "My spending habits changed just from seeing the insights." },
   { name: "Dennis L.", role: "Designer", quote: "Simple, clean, and actually useful. Rare combo." },
@@ -15,16 +15,16 @@ const testimonialsRow1 = [
 const testimonialsRow2 = [
   { name: "Sarah J.", role: "Marketer", quote: "I recommended this to my whole friend group within a week." },
   { name: "Peter A.", role: "Accountant", quote: "Even as a finance person, the clarity Thamani brings is unmatched." },
-  { name: "Lucy M.", role: "Nurse", quote: "No sign-ups, no cloud stuff — just works. That's what I needed." },
+  { name: "Lucy M.", role: "Nurse", quote: "Glance has me on chockhold. That's what I needed." },
   {
     name: "James T.",
     role: "Entrepreneur",
-    quote: "It's like having a personal finance assistant that respects your privacy.",
+    quote: "It sometimes feels like having a personal finance assistant.",
   },
   {
     name: "Mercy W.",
     role: "Content creator",
-    quote: "The streaks keep me accountable. I actually look forward to checking.",
+    quote: "The dashboard keeps me accountable. I actually look forward to checking.",
   },
   { name: "Hassan R.", role: "Engineer", quote: "Offline-first is the way. Thamani gets it." },
 ];
@@ -82,7 +82,7 @@ export function FreedomSection() {
   const marqueeOpacity = useTransform(scrollYProgress, [0.4, 0.65], [0, 1]);
 
   return (
-    <section ref={sectionRef} id="freedom" data-nav-theme="dark" className="relative md:sticky top-0 z-[4] bg-[#B081EE]">
+    <section ref={sectionRef} id="freedom" data-nav-theme="dark" className="relative md:sticky top-0 z-[4] bg-[#8A2BE2]">
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes marquee-scroll {
           0% { transform: translateX(0); }
@@ -110,18 +110,18 @@ export function FreedomSection() {
           {/* ── Right: Title + Description + Testimonial marquee ── */}
           <div className="flex flex-1 flex-col overflow-hidden">
             <motion.h6
-              className="leading-[1.1] font-medium tracking-[-0.02em] text-white"
+              className="leading-[1.1] font-semibold tracking-[-0.02em] text-white"
               style={{
                 y: rightY,
                 opacity: rightOpacity,
                 fontSize: "clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem)",
               }}
             >
-              Live mindful & Enjoy the spending
+             Enjoy the spending
             </motion.h6>
 
             <motion.p
-              className="mt-4 max-w-md leading-relaxed font-normal text-white/60"
+              className="mt-4 max-w-md leading-relaxed font-medium text-white/60"
               style={{
                 y: rightY,
                 opacity: rightOpacity,
