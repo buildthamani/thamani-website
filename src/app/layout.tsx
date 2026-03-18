@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/next";
 import { Toaster } from "sonner";
 import { SmoothScrollProvider } from "@/components/layout/smooth-scroll-provider";
 import "./globals.css";
@@ -33,6 +34,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} antialiased`}>
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        <Analytics />
         <Toaster />
       </body>
     </html>
